@@ -10,6 +10,15 @@ fn main() {
   let system_tray = SystemTray::new();
 
   let app = tauri::Builder::default()
+    .on_window_event(move |event| {
+      let evt = event.event();
+      let window = event.window();
+
+      if let tauri::WindowEvent::Focused(true) = evt {
+      } else if let tauri::WindowEvent::Focused(false) = evt {
+        window.hide().unwrap();
+      }
+    })
     .system_tray(system_tray)
     .on_system_tray_event(|app, event| {
       let window = app.get_window("main").unwrap();
