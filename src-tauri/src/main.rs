@@ -3,13 +3,17 @@
   windows_subsystem = "windows"
 )]
 
-use tauri::Manager;
-use tauri::{SystemTray, SystemTrayEvent};
+use tauri::{Manager, Menu, Submenu, SystemTray, SystemTrayEvent};
 
 fn main() {
   let system_tray = SystemTray::new();
+  let menu = Menu::new().add_submenu(Submenu::new(
+    "MM Lunch",
+    Menu::new().add_native_item(tauri::MenuItem::Quit),
+  ));
 
   let app = tauri::Builder::default()
+    .menu(menu)
     .on_window_event(move |event| {
       let evt = event.event();
       let window = event.window();
