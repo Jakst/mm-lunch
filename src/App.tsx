@@ -249,11 +249,10 @@ function Grid({ date }: { date: Date }) {
 								const isSet = state !== 'none'
 
 								function toggleValue() {
-									const newData = {
-										...savedData,
-										[dateString]:
-											state === 'none' || state === 'bleh' ? true : false,
-									}
+									let newData = { ...savedData }
+
+									if (state === 'bleh') delete newData[dateString]
+									else newData[dateString] = state === 'none'
 
 									setSavedData(newData)
 									localStorage.setItem(
