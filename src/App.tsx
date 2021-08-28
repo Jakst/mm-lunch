@@ -1,7 +1,28 @@
-import React, { CSSProperties, useState } from 'react'
+import React, { CSSProperties, useEffect, useState } from 'react'
 import './App.css'
+import { appWindow } from '@tauri-apps/api/window'
+import { UnlistenFn } from '@tauri-apps/api/event'
+
+function useFocusUpdater() {
+	const [, update] = useState(0)
+
+	useEffect(() => {
+		let unlistener: UnlistenFn | undefined
+
+		appWindow
+			.listen('tauri://focus', () => {
+				console.log('hej')
+				update(Math.random())
+			})
+			.then((callback) => (unlistener = callback))
+
+		return () => unlistener?.()
+	}, [])
+}
 
 function App() {
+	useFocusUpdater()
+
 	const today = new Date()
 
 	const [monthOffset, setMonthOffset] = useState(0)
