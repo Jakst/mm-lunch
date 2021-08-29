@@ -2,10 +2,11 @@
 	"name": "app",
 	"private": true,
 	"scripts": {
-		"dev": "vite --port 1543",
-		"build": "tsc && vite build",
-		"serve": "vite preview",
-		"tauri": "tauri"
+		"dev": "tauri dev",
+		"dev:fe": "vite --port 1543",
+		"build": "tauri dev",
+		"build:fe": "tsc && vite build",
+		"serve": "vite preview"
 	},
 	"dependencies": {
 		"@tauri-apps/api": "1.0.0-beta.8",
