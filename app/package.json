@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "tauri dev",
     "dev:fe": "vite --port 1543",
-    "build": "tauri dev",
+    "build": "tauri build",
     "build:fe": "tsc && vite build",
     "serve": "vite preview"
   },
