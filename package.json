@@ -3,12 +3,14 @@
   "packageManager": "yarn@3.0.1",
   "private": true,
   "workspaces": [
-    "app"
+    "app",
+    "updater"
   ],
   "volta": {
     "node": "14.17.5"
   },
   "scripts": {
-    "app": "yarn workspace app"
+    "app": "yarn workspace app",
+    "updater": "yarn workspace updater"
   }
 }
