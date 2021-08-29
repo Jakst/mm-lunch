@@ -46,7 +46,10 @@
       }
     },
     "updater": {
-      "active": false
+      "active": true,
+      "endpoints": [
+        "https://mm-lunch.vercel.app/api/releases/{{target}}/{{current_version}}"
+      ]
     },
     "allowlist": {
       "all": false
