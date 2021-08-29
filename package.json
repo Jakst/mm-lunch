@@ -1,6 +1,7 @@
 {
 	"name": "mm-lunch",
 	"version": "0.0.0",
+	"packageManager": "yarn@3.0.1",
 	"scripts": {
 		"dev": "vite --port 1543",
 		"build": "tsc && vite build",
