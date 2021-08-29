@@ -19,7 +19,7 @@ export default function handler(
   const [os, version] = query.versionInfo
 
   if (os === 'darwin') {
-    const url = `${req.headers.host}${appInfo.latest.binary}`
+    const url = `https://${req.headers.host}${appInfo.latest.binary}`
     const version = appInfo.latest.version
 
     res.status(200).json({ url, version })
