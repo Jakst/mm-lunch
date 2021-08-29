@@ -14,13 +14,7 @@
       "active": true,
       "targets": "all",
       "identifier": "com.tauri.dev",
-      "icon": [
-        "icons/32x32.png",
-        "icons/128x128.png",
-        "icons/128x128@2x.png",
-        "icons/icon.icns",
-        "icons/icon.ico"
-      ],
+      "icon": ["icons/stew.png"],
       "resources": [],
       "externalBin": [],
       "copyright": "",
@@ -73,7 +67,7 @@
       "csp": "default-src blob: data: filesystem: ws: wss: http: https: tauri: 'unsafe-eval' 'unsafe-inline' 'self' img-src: 'self'"
     },
     "systemTray": {
-      "iconPath": "icons/icon.png",
+      "iconPath": "icons/stew.png",
       "iconAsTemplate": true
     }
   }
