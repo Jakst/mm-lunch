@@ -40,7 +40,7 @@ function App() {
   }
 
   const year = selectedDate.getUTCFullYear()
-  const monthName = selectedDate.toLocaleString('default', { month: 'long' })
+  const monthName = selectedDate.toLocaleString('en-GB', { month: 'long' })
   const nextMonthDisabled = monthOffset === 0
 
   return (
@@ -304,7 +304,7 @@ function Grid({ date }: { date: Date }) {
         </span>
 
         <span style={{ fontWeight: 'normal' }}>
-          in {date.toLocaleString('default', { month: 'long' })}
+          in {date.toLocaleString('en-GB', { month: 'long' })}
         </span>
       </h3>
     </div>
